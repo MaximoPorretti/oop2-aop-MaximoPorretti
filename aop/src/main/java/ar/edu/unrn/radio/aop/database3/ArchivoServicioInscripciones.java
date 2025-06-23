@@ -3,6 +3,7 @@ package ar.edu.unrn.radio.aop.database3;
 import ar.edu.unrn.radio.aop.model3.Concurso;
 import ar.edu.unrn.radio.aop.model3.Participante;
 import ar.edu.unrn.radio.aop.model3.ServicioDeInscripciones;
+import ar.edu.unrn.radio.aop.Log;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -15,7 +16,8 @@ public class ArchivoServicioInscripciones implements ServicioDeInscripciones {
     }
 
     @Override
-    public void inscribir(Participante p, Concurso c) {
+    @Log
+    public void saveInscription(Participante p, Concurso c) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(rutaArchivo, true))) {
             pw.printf("%s, %s, %s, %s, %d%n",
                     p.getApellido(), p.getNombre(), p.getTelefono(), p.getEmail(), c.getId());

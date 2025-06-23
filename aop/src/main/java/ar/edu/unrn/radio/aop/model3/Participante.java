@@ -19,15 +19,19 @@ public class Participante {
     public String getApellido() {
         return apellido;
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public String getTelefono() {
         return telefono;
     }
+
     public String getEmail() {
         return email;
     }
+
     public String getDni() {
         return dni;
     }

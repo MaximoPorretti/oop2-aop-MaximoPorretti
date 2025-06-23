@@ -4,6 +4,7 @@ package ar.edu.unrn.radio.aop.database3;
 
 import ar.edu.unrn.radio.aop.model3.Concurso;
 import ar.edu.unrn.radio.aop.model3.RepositorioConcursos;
+import ar.edu.unrn.radio.aop.Log;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,7 +20,8 @@ public class ArchivoRepositorioConcursos implements RepositorioConcursos {
     }
 
     @Override
-    public List<Concurso> concursosVigentes() {
+    @Log
+    public List<Concurso> todosLosConcursos() {
         List<Concurso> vigentes = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String linea;

@@ -63,7 +63,7 @@ public class RadioCompetition extends JFrame {
 
     private void cargarConcursos() {
         comboBox.addItem("Seleccione un concurso...");
-        List<Concurso> concursos = repo.concursosVigentes();
+        List<Concurso> concursos = repo.todosLosConcursos();
         for (Concurso c : concursos) {
             String key = c.toString();
             concursosMap.put(key, c);
@@ -85,7 +85,7 @@ public class RadioCompetition extends JFrame {
         String key = (String) comboBox.getSelectedItem();
         Concurso concurso = concursosMap.get(key);
 
-        inscripciones.inscribir(participante, concurso);
+        inscripciones.saveInscription(participante, concurso);
         JOptionPane.showMessageDialog(this, "Inscripción registrada correctamente.");
         limpiarFormulario();
     }

@@ -24,7 +24,7 @@ public class ArchivoRepositorioConcursos implements RepositorioConcursos {
     /** Devuelve únicamente los concursos vigentes a la fecha de hoy. */
     @Override
     @Log     // ← queda registrado en el archivo de log
-    public List<Concurso> concursosVigentes() {
+    public List<Concurso> todosLosConcursos() {
 
         List<Concurso> vigentes = new ArrayList<>();
 

@@ -22,7 +22,7 @@ public class ServicioDeInscripcionesImpl implements ServicioDeInscripciones {
 
     @Override
     @Log
-    public void inscribir(Participante participante, Concurso concurso) {
+    public void saveInscription(Participante participante, Concurso concurso) {
 
         // Validaciones mínimas
         Objects.requireNonNull(participante, "participante nulo");

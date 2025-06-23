@@ -18,12 +18,15 @@ public class Concurso {
     public int getId() {
         return id;
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public boolean estaVigente(LocalDate hoy) {
         return !hoy.isBefore(inicio) && !hoy.isAfter(fin);
     }
+
     @Override
     public String toString() {
         return id + " - " + nombre;

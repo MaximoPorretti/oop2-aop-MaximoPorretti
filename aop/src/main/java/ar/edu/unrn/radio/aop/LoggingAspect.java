@@ -47,12 +47,14 @@ public class LoggingAspect {
 
         // Persistir
         try {
+            System.out.println("Intentando escribir log en: " + LOG_FILE.toAbsolutePath());
             Files.createDirectories(LOG_FILE.getParent());
             Files.writeString(LOG_FILE, linea,
                     StandardOpenOption.CREATE,
                     StandardOpenOption.APPEND);
         } catch (Exception e) {
             System.err.println("[LogAspect] No se pudo escribir: " + e);
+            e.printStackTrace();
         }
     }
 }
